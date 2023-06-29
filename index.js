@@ -6,8 +6,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 });
 
-
-
+//mount on api
+app.use('/api', require('./api'));
 const runServer = () => {
     app.listen(port, () => {
         console.log(`server is running on port ${port}`)
