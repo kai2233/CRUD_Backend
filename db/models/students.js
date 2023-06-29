@@ -27,14 +27,14 @@ const students = db.define("students", {
                 max:4.0
         }
     },
-    campus_id:{
-        type:DataTypes.INTEGER,
-        allowNull:false,
-        references:{
-            model:'campuses',
-            key:'id'
-        }
-    }
+    // campus_id:{
+    //     type:DataTypes.INTEGER,
+    //     allowNull:false,
+    //     references:{
+    //         model:'campuses',
+    //         key:'id'
+    //     }
+    // }
 });
 
 module.exports = students;
