@@ -1,7 +1,7 @@
-const {DataTypes} = require('sequelize');
-const db = require('../db');
+const {DataTypes} = require("sequelize");
+const db = require("../db");
 
-const students = db.define('students', {
+const students = db.define("students", {
     firstName:{
         type:DataTypes.STRING,
         allowNull:false
@@ -15,7 +15,7 @@ const students = db.define('students', {
         allowNull:false
     },
     imageUrl:{
-        type:DataTypes.STRING,
+        type:DataTypes.TEXT,
         defaultValue:'https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?w=740&t=st=1688008224~exp=1688008824~hmac=432d7c63b41663f7034baac84cb119c7adbe9433fc3a6b2bc96f99c0bab10b3e'
     },
     gpa:{
@@ -26,9 +26,15 @@ const students = db.define('students', {
                 min:0.0,
                 max:4.0
         }
+    },
+    campus_id:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        references:{
+            model:'campuses',
+            key:'id'
+        }
     }
-
-
 });
 
 module.exports = students;
