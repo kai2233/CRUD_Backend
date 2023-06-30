@@ -16,6 +16,8 @@ router.get('/', async (req, res, next) => {
 
 });
 
+//localhost:8080/api/students/findStudent/
+//display the info of a single student and student's campus based on given id
 router.get("/findStudent/:id", async (req, res, next) => {
     // const stuID = req.query.stuID;
     const stuID = req.params.id;
@@ -32,6 +34,8 @@ router.get("/findStudent/:id", async (req, res, next) => {
     }
   });
 
+  //localhost:8080/api/students/addStudents
+  //add a new student to the database
   router.post("/addStudents", async (req, res, next) => {
 
     const newStudents = await students.create(req.body);
@@ -39,6 +43,8 @@ router.get("/findStudent/:id", async (req, res, next) => {
       : res.status(404).send("created unsuccessfully");
   });
 
+  //localhost:8080/api/students/deleteStudents/
+  //delete a student from database based on given id
   router.delete("/deleteStudents/:id", async (req, res, next) => {
     console.log(req.params.id);
     const deleteStudents = await students.findAll({where:{ id:req.params.id}});
