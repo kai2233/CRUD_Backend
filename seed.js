@@ -4,37 +4,37 @@ const { campuses, students } = require("./db/models");
 const seedCampuses = [
     {
         name: "Brooklyn College",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
         address: "2900 Bedford Ave, Brooklyn, NY 11210",
         description: "Brooklyn College is a public university in Brooklyn in New York City. It is part of the City University of New York system and enrolls over 17,000 undergraduate and over 2,800 graduate students on a 35-acre campus as of 2019. (From wekipideia.com)"
     },
     {
         name: "Baruch College",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/entry-15-baruch_at_night-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/entry-15-baruch_at_night-768x402.jpg",
         address: "55 Lexington Avenue, New York, NY 10010",
         description: "Baruch College (officially the Bernard M. Baruch College) is a public college in New York City. It is a constituent college of the City University of New York system. Named for financier and statesman Bernard M. Baruch, the college operates undergraduate and postgraduate programs through the Zicklin School of Business, the Weissman School of Arts and Sciences, and the Marxe School of Public and International Affairs. (From wekipideia.com)"
     },
     {
         name: "College of Staten Island",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
         address: "2800 Victory Boulevard, Staten Island, NY 10314",
         description: "The College of Staten Island (CSI) is a public university in Staten Island, New York. It is one of the 11 four-year senior colleges within the City University of New York system. Programs in the liberal arts and sciences and professional studies lead to bachelor's and associate degrees. The master's degree is awarded in 13 professional and liberal arts and sciences fields of study. A clinical doctorate is awarded by the department of physical therapy. The college participates in doctoral programs of the CUNY Graduate Center in biochemistry, biology, chemistry, computer science, nursing, physics, and psychology. (From wekipideia.com)"
     },
     {
         name: "John Jay College of Criminal Justice",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/admissions-2021-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/admissions-2021-768x402.jpg",
         address: "524 W 59th St, New York, NY 10019",
         description: "The John Jay College of Criminal Justice (John Jay) is a public college focused on criminal justice and located in New York City. It is a senior college of the City University of New York (CUNY). John Jay was founded as the only liberal arts college with a criminal justice and forensic focus in the United States. (From wekipideia.com)"
     },
     {
         name: "Hunter College",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
         address: "695 Park Ave, New York, NY 10065",
         description: "Hunter College is a public university in New York City. It is one of the constituent colleges of the City University of New York and offers studies in more than one hundred undergraduate and postgraduate fields across five schools. It also administers Hunter College High School and Hunter College Elementary School. (From wekipideia.com)"
     },
     {
         name: "The City College of New York",
-        imgUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/City-College-Photo-Request-2017_48_CarlosParker_HarrisHall-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/City-College-Photo-Request-2017_48_CarlosParker_HarrisHall-768x402.jpg",
         address: "160 Convent Ave, New York, NY 10031",
         description: "The City College of the City University of New York (also known as the City College of New York, or simply City College or CCNY) is a public research university within the City University of New York (CUNY) system in New York City. Founded in 1847, City College was the first free public institution of higher education in the United States. It is the oldest of CUNY's 25 institutions of higher learning and is considered its flagship college. (From wekipideia.com)"
     },

@@ -1,4 +1,5 @@
 const router = require("express").Router();
+router.use(require("express").json());
 const { campuses, students } = require("../db/models");
 
 // Root here is localhost:8080/api/campuses/
@@ -15,7 +16,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/findCampuses", async (req, res, next) => {
+router.get("/findCampus", async (req, res, next) => {
   const campID = req.query.campID;
   console.log(campID);
   try {
@@ -30,15 +31,20 @@ router.get("/findCampuses", async (req, res, next) => {
   }
 });
 
-// router.get("/newShoes",async (req, res, next) => {
-//   try{
-//     const newShoes = await Shoes.create({ company: "abc", type: "boot",laces: false, size:1});
-//     newShoes
-//       ? res.status(200).json(newShoes) // if allShoes is truthy
-//       : res.status(404).send("new shoes Not Found");
-//   }catch(error){
-//     next(error);
-// }});
+router.post("/addCampus", async (req, res, next) => {
+
+  const newCampus = await campuses.create({name: req.body.name,address: req.body.address, description: req.body.description});
+  newCampus? res.status(200).send("created successfully")
+    : res.status(404).send("created unsuccessfully");
+});
+
+router.delete("/deleteCampus/:id", async (req, res, next) => {
+  console.log(req.params.id);
+  const deleteCampus = await campuses.findAll({where:{ id:req.params.id}});
+  await deleteCampus[0].destroy();
+  res.status(200).json(deleteCampus) 
+});
+
 
 
 
