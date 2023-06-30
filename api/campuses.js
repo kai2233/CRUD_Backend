@@ -43,7 +43,7 @@ router.delete("/deleteCampus/:id", async (req, res, next) => {
   console.log(req.params.id);
   const deleteCampus = await campuses.findAll({where:{ id:req.params.id}});
   deleteCampus? await deleteCampus[0].destroy()
-    : res.status(404).send("campuses $1 Not Found", [campID]);
+    : res.status(404).send("campuses $1 Not Found", [req.params.id]);
   res.status(200).json(deleteCampus) 
 });
 
