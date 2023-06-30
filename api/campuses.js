@@ -1,5 +1,5 @@
 const router = require("express").Router();
-router.use(require("express").json());
+//router.use(require("express").json());
 const { campuses, students } = require("../db/models");
 
 // Root here is localhost:8080/api/campuses/
