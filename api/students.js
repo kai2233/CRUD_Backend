@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
 
 });
 
-router.get("/findStudent/id", async (req, res, next) => {
+router.get("/findStudent/:id", async (req, res, next) => {
     // const stuID = req.query.stuID;
     const stuID = req.params.id;
     console.log(stuID);
