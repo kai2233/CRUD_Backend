@@ -16,9 +16,10 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/findCampus", async (req, res, next) => {
-  const campID = req.query.campID;
-  console.log(campID);
+router.get("/findCampus/:id", async (req, res, next) => {
+  // const campID = req.query.campID;
+  console.log(req.params.id);
+  const campID = req.params.id;
   try {
     const singleCampuses = await campuses.findAll(
       {include: students,
@@ -33,15 +34,16 @@ router.get("/findCampus", async (req, res, next) => {
 
 router.post("/addCampus", async (req, res, next) => {
 
-  const newCampus = await campuses.create({name: req.body.name,address: req.body.address, description: req.body.description});
-  newCampus? res.status(200).send("created successfully")
+  const newCampus = await campuses.create(req.body);
+  newCampus? res.status(200).json(newCampus)
     : res.status(404).send("created unsuccessfully");
 });
 
 router.delete("/deleteCampus/:id", async (req, res, next) => {
   console.log(req.params.id);
   const deleteCampus = await campuses.findAll({where:{ id:req.params.id}});
-  await deleteCampus[0].destroy();
+  deleteCampus? await deleteCampus[0].destroy()
+    : res.status(404).send("campuses $1 Not Found", [campID]);
   res.status(200).json(deleteCampus) 
 });
 
