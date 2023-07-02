@@ -37,7 +37,7 @@ router.get("/findCampus/:id", async (req, res, next) => {
 //localhost:8080/api/campuses/addCampus
 //add a new campus to the database
 router.post("/addCampus", async (req, res, next) => {
-
+  console.log(req.body);
   const newCampus = await campuses.create(req.body);
   newCampus? res.status(200).json(newCampus)
     : res.status(404).send("created unsuccessfully");
