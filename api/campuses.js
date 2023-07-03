@@ -8,7 +8,7 @@ const { campuses, students } = require("../db/models");
 // if allCampuses is falsey, display list not found message
 router.get("/", async (req, res, next) => {
   try {
-    const allCampuses = await campuses.findAll();
+    const allCampuses = await campuses.findAll({order:[['id','ASC']]});
     allCampuses? res.status(200).json(allCampuses) 
     : res.status(404).send("campuses List Not Found"); 
   } catch (err) {
@@ -55,7 +55,7 @@ router.delete("/deleteCampus/:id", async (req, res, next) => {
   try {
       const deleteCampus = await campuses.findOne({where: { id: req.params.id }});
       await deleteCampus.destroy();
-      const allCampuses = await campuses.findAll();
+      const allCampuses = await campuses.findAll({order:[['id','ASC']]});
       res.status(200).json(allCampuses);
     } catch (err) {
       next(err);
