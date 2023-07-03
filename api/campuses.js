@@ -55,7 +55,8 @@ router.delete("/deleteCampus/:id", async (req, res, next) => {
   try {
       const deleteCampus = await campuses.findOne({where: { id: req.params.id }});
       await deleteCampus.destroy();
-      res.status(200).json(deleteCampus);
+      const allCampuses = await campuses.findAll();
+      res.status(200).json(allCampuses);
     } catch (err) {
       next(err);
     }
