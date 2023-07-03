@@ -16,7 +16,7 @@ const seedCampuses = [
     },
     {
         name: "College of Staten Island",
-        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/home-preview/colleges/layout/CSI_CMYK-768x402.jpg",
         address: "2800 Victory Boulevard, Staten Island, NY 10314",
         description: "The College of Staten Island (CSI) is a public university in Staten Island, New York. It is one of the 11 four-year senior colleges within the City University of New York system. Programs in the liberal arts and sciences and professional studies lead to bachelor's and associate degrees. The master's degree is awarded in 13 professional and liberal arts and sciences fields of study. A clinical doctorate is awarded by the department of physical therapy. The college participates in doctoral programs of the CUNY Graduate Center in biochemistry, biology, chemistry, computer science, nursing, physics, and psychology. (From wekipideia.com)"
     },
@@ -28,7 +28,7 @@ const seedCampuses = [
     },
     {
         name: "Hunter College",
-        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/brooklyn-college/brc_aerial_0605_hor-768x402.jpg",
+        imageUrl: "https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/schools/hunter-college/htc_huntercampus_R_3520_hor-768x402.jpg",
         address: "695 Park Ave, New York, NY 10065",
         description: "Hunter College is a public university in New York City. It is one of the constituent colleges of the City University of New York and offers studies in more than one hundred undergraduate and postgraduate fields across five schools. It also administers Hunter College High School and Hunter College Elementary School. (From wekipideia.com)"
     },
