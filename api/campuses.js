@@ -63,6 +63,19 @@ router.delete("/deleteCampus/:id", async (req, res, next) => {
 });
 
 
+//localhost:8080/api/campuses/updateCampus
+//update a campus in the database based on the id
+router.put("/updateCampus", async (req, res, next) => {
+  try{
+    const targetCampus = await campuses.findOne({where: { id: req.body.id }});
+    await targetCampus.update(req.body);
+    res.status(200).json(targetCampus);
+  }catch (err) {
+    next(err);
+  }
+});
+
+
 
 
 module.exports = router;
