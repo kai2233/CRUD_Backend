@@ -46,11 +46,19 @@ router.post("/addCampus", async (req, res, next) => {
 //localhost:8080/api/campuses/deleteCampus/
 //delete a campus from the database
 router.delete("/deleteCampus/:id", async (req, res, next) => {
-  console.log(req.params.id);
-  const deleteCampus = await campuses.findAll({where:{ id:req.params.id}});
-  deleteCampus? await deleteCampus[0].destroy()
-    : res.status(404).send("campuses $1 Not Found", [req.params.id]);
-  res.status(200).json(deleteCampus) 
+  console.log("Message from delete "+ req.params.id);
+  // const deleteCampus = await campuses.findAll({where:{ id:req.params.id}});
+  // console.log(deleteCampus);
+  // deleteCampus? await deleteCampus.destroy()
+  //   : res.status(404).send("campuses $1 Not Found", [req.params.id]);
+  // res.status(200).json(deleteCampus) 
+  try {
+      const deleteCampus = await campuses.findOne({where: { id: req.params.id }});
+      await deleteCampus.destroy();
+      res.status(200).json(deleteCampus);
+    } catch (err) {
+      next(err);
+    }
 });
 
 
