@@ -46,11 +46,13 @@ router.get("/findStudent/:id", async (req, res, next) => {
   //localhost:8080/api/students/deleteStudents/
   //delete a student from database based on given id
   router.delete("/deleteStudents/:id", async (req, res, next) => {
-    console.log(req.params.id);
-    const deleteStudents = await students.findAll({where:{ id:req.params.id}});
-    deleteStudents? await deleteStudents[0].destroy()
-      : res.status(404).send("students $1 Not Found", [req.params.id]);
-    res.status(200).json(deleteStudents) 
+    try {
+      const deleteStudent = await students.findOne({where: { id: req.params.id }});
+      await deleteStudent.destroy();
+      res.status(200).json(deleteStudent);
+    } catch (err) {
+      next(err);
+    }
   });
 
 module.exports = router;
