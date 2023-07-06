@@ -18,8 +18,8 @@ const runServer = () => {
     })
 };
 
-// const syncDB = () => db.sync();
-const syncDB = () => db.sync({force: true});
+const syncDB = () => db.sync();
+// const syncDB = () => db.sync({force: true});
 syncDB();
 runServer();
 module.exports = app;;
