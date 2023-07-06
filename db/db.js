@@ -1,10 +1,9 @@
 const { Sequelize } = require("sequelize");
 const { name } = require("../package.json");
+require('dotenv').config();
 // name === cruddb
 
-const db = new Sequelize(`postgres://postgres:1536771545@localhost:5432/${name}`, {
-  logging: false,
-});
+const db = new Sequelize(process.env.POSTGRES_URL+ "?sslmode=require",);
 
 db.authenticate().then(()=>{
   console.log("Connection has been established successfully.");
