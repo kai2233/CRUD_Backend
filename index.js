@@ -1,7 +1,8 @@
 const express = require('express');
 const db = require("./db");
 const app = express();
-const port = 8080;
+// const port = 8080;
+require('dotenv').config();
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
 //mount on api
 app.use('/api', require('./api'));
 const runServer = () => {
-    app.listen(port, () => {
+    app.listen(process.env.PORT, () => {
         console.log(`server is running on port ${port}`)
     })
 };
