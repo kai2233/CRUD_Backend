@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.use('/api', require('./api'));
 const runServer = () => {
     app.listen(process.env.PORT, () => {
-        console.log(`server is running on port ${port}`)
+        console.log(`server is running on port 8080`)
     })
 };
 
