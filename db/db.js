@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+const pg = require("pg");
 const { name } = require("../package.json");
 require('dotenv').config();
 // name === cruddb
